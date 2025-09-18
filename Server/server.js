@@ -11,11 +11,11 @@ const { Server } = require("socket.io");
 
 const server = http.createServer(app);
 
-const PORT = process.env.PORT || 3003; // ✅ fallback for local dev
+const PORT = process.env.PORT || 3003;
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173", // update to your frontend’s deployed URL later
+    origin: "http://localhost:5173",
     methods: ["GET", "POST"],
   },
 });
@@ -27,9 +27,9 @@ io.on("connection", (socket) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`✅ Server started on ${PORT}`);
+  console.log(`Server started on ${PORT}`);
 });
 
 server.on("error", (err) => {
-  console.error("❌ Server error:", err);
+  console.error("Server error:", err);
 });
