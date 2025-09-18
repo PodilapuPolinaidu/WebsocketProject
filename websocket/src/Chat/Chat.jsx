@@ -8,7 +8,7 @@ const Chat = () => {
   const [inputval, setinputval] = useState("");
 
   useEffect(() => {
-    const newSocket = io("https://websocketproject-6p8s.onrender.com");
+    const newSocket = io("http://localhost:3003");
 
     setsocket(newSocket);
 
