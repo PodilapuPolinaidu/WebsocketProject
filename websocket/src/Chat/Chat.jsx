@@ -8,7 +8,7 @@ const Chat = () => {
   const [inputval, setinputval] = useState("");
 
   useEffect(() => {
-    const newSocket = io("http://localhost:3003");
+    const newSocket = io("https://websocketproject-6p8s.onrender.com");
 
     setsocket(newSocket);
 
@@ -22,7 +22,7 @@ const Chat = () => {
   const sending = () => {
     if (socket && inputval.trim()) {
       socket.emit("frontendmsg", inputval);
-        setinputval(""); 
+      setinputval("");
     }
   };
 
